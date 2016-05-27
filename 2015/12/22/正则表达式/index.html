@@ -1,0 +1,553 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>正则表达式的模式匹配 | Hexo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="John Doe">
+    
+
+    
+    <meta name="description" content="正则表达式的小憩重要知识点：分组:     reg1 = /[&amp;apos;&amp;quot;][^&amp;apos;&amp;quot;]*[&amp;apos;&amp;quot;]/;    reg2 = /([&amp;apos;&amp;quot;])[^&amp;apos;&amp;quot;]*\1/;     reg1 = reg2;
+    带圆括号的表达式允许同一正则表达式的后部引用前面的子表达式如reg2的表达式([&amp;apos;&amp;quot;])">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则表达式的模式匹配">
+<meta property="og:url" content="http://crerich.github.io/2015/12/22/正则表达式/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="正则表达式的小憩重要知识点：分组:     reg1 = /[&amp;apos;&amp;quot;][^&amp;apos;&amp;quot;]*[&amp;apos;&amp;quot;]/;    reg2 = /([&amp;apos;&amp;quot;])[^&amp;apos;&amp;quot;]*\1/;     reg1 = reg2;
+    带圆括号的表达式允许同一正则表达式的后部引用前面的子表达式如reg2的表达式([&amp;apos;&amp;quot;])">
+<meta property="og:updated_time" content="2015-12-23T06:41:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="正则表达式的模式匹配">
+<meta name="twitter:description" content="正则表达式的小憩重要知识点：分组:     reg1 = /[&amp;apos;&amp;quot;][^&amp;apos;&amp;quot;]*[&amp;apos;&amp;quot;]/;    reg2 = /([&amp;apos;&amp;quot;])[^&amp;apos;&amp;quot;]*\1/;     reg1 = reg2;
+    带圆括号的表达式允许同一正则表达式的后部引用前面的子表达式如reg2的表达式([&amp;apos;&amp;quot;])">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Hexo" title="Hexo"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Hexo">Hexo</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:crerich.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/12/22/正则表达式/" title="正则表达式的模式匹配" itemprop="url">正则表达式的模式匹配</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
+		
+  <p class="article-time">
+    <time datetime="2015-12-22T02:47:50.000Z" itemprop="datePublished"> Published 2015-12-22</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#正则表达式的小憩"><span class="toc-number">1.</span> <span class="toc-text">正则表达式的小憩</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#重要知识点："><span class="toc-number">1.1.</span> <span class="toc-text">重要知识点：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#举例说明"><span class="toc-number">1.2.</span> <span class="toc-text">举例说明:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#附录-正则表达式参照表"><span class="toc-number">1.3.</span> <span class="toc-text">附录(正则表达式参照表)</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<h3 id="正则表达式的小憩"><a href="#正则表达式的小憩" class="headerlink" title="正则表达式的小憩"></a>正则表达式的小憩</h3><h4 id="重要知识点："><a href="#重要知识点：" class="headerlink" title="重要知识点："></a>重要知识点：</h4><pre><code>分组:     reg1 = /[&apos;&quot;][^&apos;&quot;]*[&apos;&quot;]/;    reg2 = /([&apos;&quot;])[^&apos;&quot;]*\1/;     reg1 = reg2;
+    带圆括号的表达式允许同一正则表达式的后部引用前面的子表达式如reg2的表达式([&apos;&quot;])可以用\1来表示。
+    (因为子表达式可以嵌套另一个子表达式，所以它的位置是参与计数的左括号的位置。例如:/([Jj]ava([Ss]cript)?)\sis\s(fun\w*)/ 此式的\2就是([Ss]cript))
+    若创建一个不带数字编码的引用，也可以对子表达式进行分组。但此时应用&quot;(?:&quot;和&quot;)&quot;。例如:/([Jj]ava(?:[Ss]cript)?)\sis\s(fun\w*)/ 此式的\2就是(fun\w*)。
+
+String支持的4种正则表达式的方法search()、replace()、match()、split()。
+    一.search():返回与之匹配的子串的起始位置。若无，返回-1。若search()的参数不是正则表达式，则通过RegExp构造函数将其转换成正则表达式。
+           search方法不支持全局检索，因为它会忽略正则表达式参数中的修饰符g(即:全局匹配)
+    二.replace():用以执行检索与替换操作。若replace()的第一个参数不是正则表达式，将直接搜索这个字符串。若第一个参数是正则表达式并带有g的话，
+则替换所有与正则表达式匹配的元素。否则只替换第一个。
+    三.match():返回一个由匹配结果组成的数组。 它的唯一参数是一个正则表达式或者通过RegExp()构造函数将其转换成正则表达式。
+    四.split():这个方法用以将调用它的字符串拆分成一个子串组成的数组 它的参数可以是一个正则表达式。
+RegExp对象的属性：source、global、ignoreCase、multiline、lastIndex
+    source:只读的字符串，包含正则表达式的文本。
+    global:只读的布尔值，说明这个正则表达式是否带有修饰符g。
+    ignoreCase:只读的布尔值，说明这个正则表达式是否带有修饰符i。
+    multiline:只读的布尔值，说明这个正则表达式是否带有修饰符m。
+    lastIndex:可读/写的整数。如果匹配模式带有g修饰符，这个属性存储在整个字符串中下一次检索的开始位置。
+RegExp对象的exec()、test()方法。
+    exec():对一个指定的字符串执行正则表达式。
+    test():如果有匹配正则表达式的字符返回true否则返回false。            
+</code></pre><a id="more"></a>    
+<h4 id="举例说明"><a href="#举例说明" class="headerlink" title="举例说明:"></a>举例说明:</h4><pre><code>example1: var email = /^(\w)+(\.\w)*@(\w)+((\.\w{2,3}){1,2})$/  ||  /^(\w)+(\.\w+)*@(\w)+(\w)+((\.\w+)+)$/; 
+          //邮箱的两种正则表达式
+example2: var url = /^(\w+):\/\/([\w.]+)\/(\S*)$/;  
+          //URL的正则表达式写法
+          var text = &quot;http://www.baidu.com/~crerich&quot;;
+          console.log(url.test(text));   //true
+example3: var url = /^(\w+):\/\/([\w.]+)\/(\S*)$/;  
+          //借用example2的正则表表达式
+          var text = &quot;http://www.baidu.com/~crerich&quot;;
+          console.log(text.match(url));
+          运行结果:[&quot;http://www.baidu.com/~crerich&quot;, &quot;http&quot;, &quot;www.baidu.com&quot;, &quot;~crerich&quot;, index: 0, input: &quot;http://www.baidu.com/~crerich&quot;]
+          若此时在url后加个全局匹配g再看下效果
+          运行结果:[&quot;http://www.baidu.com/~crerich&quot;]
+example4: var url = /^(\w+):\/\/([\w.]+)\/(\S*)$/;  
+          //同样是上面的url同样是上面的text
+          var text = &quot;http://www.baidu.com/~crerich&quot;;
+          console.log(url.exec(text));
+          运行结果:[&quot;http://www.baidu.com/~crerich&quot;, &quot;http&quot;, &quot;www.baidu.com&quot;, &quot;~crerich&quot;, index: 0, input: &quot;http://www.baidu.com/~crerich&quot;]
+          若此时在url后价格全局匹配g我们会发现结果是不变的。
+example5: var url = /[c]/g;
+          var text = &quot;http://www.baidu.com/~crerich&quot;;
+          console.log(url.exec(text),url.exec(text))
+          运行结果:[&quot;c&quot;, index: 17, input: &quot;http://www.baidu.com/~crerich&quot;] [&quot;c&quot;, index: 22, input: &quot;http://www.baidu.com/~crerich&quot;]
+          //注意index的值。
+
+对上述现象做解释:当match方法检索的正则表达式没有设置修饰符g，说明此时match()执行的不是全局搜索，它会返回一个数组。数组的第一个元素就是匹配的字符串，余下的元素则是正则表达式中用圆括号括起来的字表达式。
+              index表示检索到第一个字符串的索引，input表示你要检索的字符串。
+              exec则不管是否设置修饰符g都会返回跟match不设置修饰符g的效果。此时index表示匹配的第一字符串的索引，再次执行此方法的时候默认从idnex的位置开始搜索字符。因此不同的字符串进行exec搜索的话须置0index。
+</code></pre><h4 id="附录-正则表达式参照表"><a href="#附录-正则表达式参照表" class="headerlink" title="附录(正则表达式参照表)"></a>附录(正则表达式参照表)</h4><table><br><caption>正则表达式中的直接量字符</caption><br><tr class="tableizer-firstrow"><td>&#23383;&#31526;</td><td>&#21305;&#37197;</td></tr><br> <tr><td>\o</td><td>NUL&#23383;&#31526;(\u000)</td></tr><br> <tr><td>\t</td><td>&#21046;&#34920;&#31526;</td></tr><br> <tr><td>\n</td><td>&#25442;&#34892;&#31526;</td></tr><br> <tr><td>\v</td><td>&#22402;&#30452;&#21046;&#34920;&#31526;</td></tr><br> <tr><td>\f</td><td>&#25442;&#39029;&#31526;</td></tr><br> <tr><td>\r</td><td>&#22238;&#36710;&#31526;</td></tr><br> <tr><td>\xnn</td><td>&#30001;&#21313;&#20845;&#36827;&#21046;&#25968;nn&#25351;&#23450;&#30340;&#25289;&#19969;&#23383;&#31526;&#65292;&#20363;&#22914;&#65292;\xOA&#31561;&#20215;&#20110;\n</td></tr><br> <tr><td>\uxxxx</td><td>&#30001;&#21313;&#20845;&#36827;&#21046;&#25968;xxxx&#25351;&#23450;&#30340;Unicode&#23383;&#31526;&#65292;&#20363;&#22914;&#65292;\u0009&#31561;&#20215;&#20110;\t</td></tr><br> <tr><td>\cX</td><td>&#25511;&#21046;&#23383;&#31526;^X&#65292;&#20363;&#22914;&#65292;\cJ&#31561;&#20215;&#20110;&#25442;&#34892;&#31526;\n</td></tr><br></table>
+
+<table class="tableizer-table"><br><caption>正则表达式的字符类</caption><br><tr class="tableizer-firstrow"><td>[…]</td><td>&#26041;&#25324;&#21495;&#20869;&#30340;&#20219;&#24847;&#23383;&#31526;</td></tr><br> <tr><td>[^…]</td><td>&#19981;&#22312;&#26041;&#25324;&#21495;&#20869;&#30340;&#20219;&#24847;&#23383;&#31526;</td></tr><br> <tr><td>.</td><td>&#38500;&#25442;&#34892;&#31526;&#21644;&#20854;&#20182;Unicode&#34892;&#32456;&#27490;&#31526;&#20043;&#22806;&#30340;&#20219;&#24847;&#23383;&#31526;</td></tr><br> <tr><td>\w</td><td>&#20219;&#20309;ASKII&#23383;&#31526;&#32452;&#25104;&#30340;&#21333;&#35789;&#65292;&#31561;&#20215;&#20110;[a-zA-Z0-9]</td></tr><br> <tr><td>\W</td><td>&#20219;&#20309;&#19981;&#26159;ASKII&#23383;&#31526;&#32452;&#25104;&#30340;&#21333;&#35789;&#65292;&#31561;&#20215;&#20110;[^a-zA-Z0-9]</td></tr><br> <tr><td>\s</td><td>&#20219;&#20309;unicode&#31354;&#30333;&#31526;</td></tr><br> <tr><td>\S</td><td>&#20219;&#20309;&#38750;Unicode&#31354;&#30333;&#31526;&#65292;&#27880;&#24847;\w&#21644;\S&#19981;&#21516;</td></tr><br> <tr><td>\d</td><td>&#20219;&#20309;ASKII&#25968;&#23383;&#65292;&#31561;&#20215;&#20110;[0-9]</td></tr><br> <tr><td>\D</td><td>&#38500;&#20102;ASKII&#25968;&#23383;&#20043;&#22806;&#30340;&#20219;&#20309;&#23383;&#31526;&#65292;&#31561;&#20215;&#20110;[^0-9]</td></tr><br> <tr><td>[\b]</td><td>&#36864;&#26684;&#30452;&#25509;&#37327;(&#29305;&#20363;)</td></tr><br></table>
+
+<table class="tableizer-table"><br><caption>正则表达式的重复字符语法</caption><br><tr class="tableizer-firstrow"><td>{n,m}</td><td>&#21305;&#37197;&#21069;&#19968;&#39033;&#33267;&#23569;n&#27425;&#65292;&#20294;&#19981;&#33021;&#36229;&#36807;m&#27425;</td></tr><br> <tr><td>{n,}</td><td>&#21305;&#37197;&#21069;&#19968;&#39033;n&#27425;&#25110;&#32773;&#26356;&#22810;</td></tr><br> <tr><td>{n}</td><td>&#21305;&#37197;&#21069;&#19968;&#21521;n&#27425;</td></tr><br> <tr><td>?</td><td>&#21305;&#37197;&#21069;&#19968;&#39033;0&#27425;&#25110;&#32773;1&#27425;&#65292;&#20063;&#23601;&#26159;&#35828;&#21069;&#19968;&#39033;&#26159;&#21487;&#36873;&#30340;&#65292;&#31561;&#20215;&#20110;{0,1}</td></tr><br> <tr><td>+</td><td>&#21305;&#37197;&#21069;&#19968;&#39033;1&#27425;&#25110;&#32773;&#22810;&#27425;&#65292;&#31561;&#20215;&#20110;{1,}</td></tr><br> <tr><td>*</td><td>&#21305;&#37197;&#21069;&#19968;&#39033;0&#27425;&#25110;&#32773;&#22810;&#27425;&#65292;&#31561;&#20215;&#20110;{0,}</td></tr><br></table>
+
+<table class="tableizer-table"><br><caption>正则表达式中的锚字符</caption><br><tr class="tableizer-firstrow"><td>^</td><td>&#21305;&#37197;&#23383;&#31526;&#20018;&#30340;&#24320;&#22836;&#65292;&#22312;&#22810;&#34892;&#26816;&#32034;&#20013;&#65292;&#21305;&#37197;&#19968;&#34892;&#30340;&#24320;&#22836;</td></tr><br> <tr><td>$</td><td>&#21305;&#37197;&#23383;&#31526;&#20018;&#30340;&#32467;&#23614;&#65292;&#22312;&#22810;&#34892;&#26816;&#32034;&#20013;&#65292;&#21305;&#37197;&#19968;&#34892;&#30340;&#32467;&#23614;</td></tr><br> <tr><td>\b</td><td>&#21305;&#37197;&#19968;&#20010;&#21333;&#35789;&#30340;&#36793;&#30028;&#65292;&#31616;&#35328;&#20043;&#65292;&#23601;&#26159;&#20301;&#20110;&#23383;&#31526;\w&#21644;\W&#20043;&#38388;&#30340;&#20301;&#32622;&#65292;&#25110;&#20301;&#20110;&#23383;&#31526;\w&#21644;&#23383;&#31526;&#20018;&#30340;&#24320;&#22836;&#25110;&#32773;&#32467;&#23614;&#20043;&#38388;&#30340;&#20301;&#32622;(&#20294;&#38656;&#35201;&#27880;&#24847;&#65292;[\b]&#21305;&#37197;&#30340;&#26159;&#36864;&#26684;&#31526;)</td></tr><br> <tr><td>\B</td><td>&#21305;&#37197;&#38750;&#21333;&#35789;&#36793;&#30028;&#30340;&#20301;&#32622;</td></tr><br> <tr><td>(?=p)</td><td>&#38646;&#23485;&#27491;&#21521;&#20808;&#34892;&#26029;&#35328;&#65292;&#35201;&#27714;&#25509;&#19979;&#26469;&#30340;&#23383;&#31526;&#37117;&#19982;p&#21305;&#37197;&#65292;&#20294;&#19981;&#33021;&#21253;&#25324;&#21305;&#37197;p&#30340;&#37027;&#20123;&#23383;&#31526;</td></tr><br> <tr><td>(?!p)</td><td>&#38646;&#23485;&#36127;&#21521;&#20808;&#34892;&#26029;&#35328;&#65292;&#35201;&#27714;&#25509;&#19979;&#26469;&#30340;&#23383;&#31526;&#37117;&#19981;&#19982;p&#21305;&#37197;</td></tr><br></table>
+
+<table class="tableizer-table"><br><caption>正则表达式的修饰符</caption><br><tr class="tableizer-firstrow"><td>i</td><td>&#25191;&#34892;&#19981;&#21306;&#20998;&#22823;&#23567;&#20889;&#30340;</td></tr><br> <tr><td>g</td><td>&#25191;&#34892;&#19968;&#20010;&#20840;&#23616;&#21305;&#37197;</td></tr><br> <tr><td>m</td><td>&#22810;&#34892;&#21305;&#37197;&#27169;&#24335;</td></tr><br></table>
+
+<table class="tableizer-table"><br><caption>正则表达式的选择、分组和引用字符</caption><br><tr class="tableizer-firstrow"><td>|</td><td>&#36873;&#25321;&#65292;&#21305;&#37197;&#30340;&#26159;&#35813;&#31526;&#21495;&#24038;&#36793;&#30340;&#23376;&#34920;&#36798;&#24335;&#25110;&#21491;&#36793;&#30340;&#23383;&#34920;&#36798;&#24335;</td></tr><br> <tr><td>(…)</td><td>&#32452;&#21512;&#65292;&#23558;&#20960;&#20010;&#39033;&#32452;&#21512;&#20026;&#19968;&#20010;&#21333;&#20803;&#65292;&#36825;&#20010;&#21333;&#20803;&#21487;&#36890;&#36807;“*”&#65292;“+”&#65292;“?”,“|”&#31561;&#31526;&#21495;&#21152;&#20197;&#20462;&#39280;&#65292;&#32780;&#19988;&#21487;&#20197;&#35760;&#20303;&#21644;&#36825;&#20010;&#32452;&#21512;&#30456;&#21305;&#37197;&#30340;&#23383;&#31526;&#20018;&#20197;&#20379;&#27492;&#21518;&#30340;&#24341;&#29992;&#20351;&#29992;</td></tr><br> <tr><td>(?:…)</td><td>&#21482;&#32452;&#21512;&#65292;&#25226;&#39033;&#32452;&#21512;&#21040;&#19968;&#20010;&#21333;&#20803;&#65292;&#20294;&#19981;&#35760;&#24518;&#19982;&#35813;&#32452;&#30456;&#21305;&#37197;&#30340;&#23383;&#31526;</td></tr><br> <tr><td>\n</td><td>&#21644;&#31532;n&#20010;&#20998;&#32452;&#31532;&#19968;&#27425;&#21305;&#37197;&#30340;&#23383;&#31526;&#30456;&#21305;&#37197;&#65292;&#32452;&#26159;&#22278;&#25324;&#21495;&#20013;&#30340;&#23376;&#34920;&#36798;&#24335;(&#20063;&#26377;&#21487;&#33021;&#26159;&#23884;&#22871;&#30340;)&#65292;&#32452;&#32034;&#24341;&#26159;&#20174;&#24038;&#21040;&#21491;&#30340;&#24038;&#25324;&#21495;&#25968;&#65292;“(?:”&#24418;&#24335;&#30340;&#20998;&#32452;&#19981;&#32534;&#30721;</td></tr><br></table>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/正则表达式/">正则表达式</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://crerich.github.io/2015/12/22/正则表达式/" data-title="正则表达式的模式匹配 | Hexo" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/12/31/Jquery/" title="Jquery">
+  <strong>上一篇：</strong><br/>
+  <span>
+  Jquery</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/12/03/数组常用方法/"  title="数组方法">
+ <strong>下一篇：</strong><br/> 
+ <span>数组方法
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#正则表达式的小憩"><span class="toc-number">1.</span> <span class="toc-text">正则表达式的小憩</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#重要知识点："><span class="toc-number">1.1.</span> <span class="toc-text">重要知识点：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#举例说明"><span class="toc-number">1.2.</span> <span class="toc-text">举例说明:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#附录-正则表达式参照表"><span class="toc-number">1.3.</span> <span class="toc-text">附录(正则表达式参照表)</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/css/" title="css">css<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Html-基础知识点-回顾/" title="Html 基础知识点 回顾">Html 基础知识点 回顾<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/jQuery-入门-一/" title="jQuery 入门(一)">jQuery 入门(一)<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/php入门-php基础/" title="php入门 php基础">php入门 php基础<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/完美世界/" title="完美世界">完美世界<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/html-css-面试题/" title="html css 面试题">html css 面试题<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/心得开始，心得寄予/" title="心得开始，心得寄予">心得开始，心得寄予<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/数组方法/" title="数组方法">数组方法<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/正则表达式/" title="正则表达式">正则表达式<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=b3593ceb&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2176287895" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="John Doe">John Doe</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

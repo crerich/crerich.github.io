@@ -4,26 +4,38 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Hello World | Hexo</title>
+    <title>数组方法 | Hexo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="John Doe">
     
 
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+    <meta name="description" content="数组常用方法：1.Array.prototype.join()  数组的指定格式的分割
+var arr = [1,2,3];
+console.log(arr.join());  //默认情况下为逗号隔开    
+console.log(arr.join(&amp;apos;-&amp;apos;)); //添加字符使之隔开
+
+function repeat(str,n){  //利用&amp;apos;a&amp;apos;做为">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://crerich.github.io/2016/05/27/hello-world/index.html">
+<meta property="og:title" content="数组方法">
+<meta property="og:url" content="http://crerich.github.io/2015/12/03/数组常用方法/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-05-27T07:38:00.000Z">
+<meta property="og:description" content="数组常用方法：1.Array.prototype.join()  数组的指定格式的分割
+var arr = [1,2,3];
+console.log(arr.join());  //默认情况下为逗号隔开    
+console.log(arr.join(&amp;apos;-&amp;apos;)); //添加字符使之隔开
+
+function repeat(str,n){  //利用&amp;apos;a&amp;apos;做为">
+<meta property="og:updated_time" content="2015-12-04T01:08:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="数组方法">
+<meta name="twitter:description" content="数组常用方法：1.Array.prototype.join()  数组的指定格式的分割
+var arr = [1,2,3];
+console.log(arr.join());  //默认情况下为逗号隔开    
+console.log(arr.join(&amp;apos;-&amp;apos;)); //添加字符使之隔开
+
+function repeat(str,n){  //利用&amp;apos;a&amp;apos;做为">
 
     
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -83,14 +95,14 @@ Quick">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/05/27/hello-world/" title="Hello World" itemprop="url">Hello World</a>
+      <a href="/2015/12/03/数组常用方法/" title="数组方法" itemprop="url">数组方法</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
 		
   <p class="article-time">
-    <time datetime="2016-05-27T07:38:00.000Z" itemprop="datePublished"> Published 2016-05-27</time>
+    <time datetime="2015-12-03T12:43:36.000Z" itemprop="datePublished"> Published 2015-12-03</time>
     
   </p>
 </header>
@@ -99,24 +111,131 @@ Quick">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#数组常用方法："><span class="toc-number">1.</span> <span class="toc-text">数组常用方法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ECMAScript5新增的数组方法"><span class="toc-number">2.</span> <span class="toc-text">ECMAScript5新增的数组方法</span></a></li></ol>
 		
 		</div>
 		
-		<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-  
+		<h3 id="数组常用方法："><a href="#数组常用方法：" class="headerlink" title="数组常用方法："></a>数组常用方法：</h3><p>1.Array.prototype.join()  数组的指定格式的分割</p>
+<pre><code>var arr = [1,2,3];
+console.log(arr.join());  //默认情况下为逗号隔开    
+console.log(arr.join(&apos;-&apos;)); //添加字符使之隔开
+
+function repeat(str,n){  //利用&apos;a&apos;做为分隔符来repeat &apos;a&apos;
+    var arr = new Array(n+1);
+    return arr.join(str);
+}
+console.log(repeat(&apos;a&apos;,4)); //aaaa
+</code></pre><a id="more"></a>
+<p>2.Array.prototype.reverse() 数组逆序（原数组被修改）</p>
+<pre><code>var arr = [1,2,3];
+console.log(arr.reverse());  //[3,2,1]
+</code></pre><p>3.Array.prototype.sort()   数组排序（原数组被修改）</p>
+<pre><code>var arr = [13,24,51,3]; 
+console.log(arr.sort()); //[13,24,3,51]
+注意：此处并不是按照数组元素的大小顺序来排列的，而是根据元素的首字母来进行排序的。
+</code></pre><p>4.Array.prototype.concat() 数组合并（原数组不会被修改）</p>
+<pre><code>var arr = [1,2,3];
+console.log(arr.concat(4,5),brr);  //[1,2,3,4,5]
+console.log(arr.concat([10,11],12)); //[1,2,3,10,11,12]
+console.log(arr.concat([1,[2,3]])); //[1,2,3,1,[2,3]]
+注意：大家注意第二个合并和第三个合并的区别，concat会默认把参数里的第一层对象拉伸开来。所以第一种和第二种是没有区别的。
+</code></pre><p>5.Array.prototype.slice() 返回部分数组（原数组不会被修改）</p>
+<pre><code>var arr = [1,2,3,4,5];
+console.log(arr.slice(1,3)); //[2,3]
+console.log(arr.slice(1));  //[2,3,4,5]
+console.log(arr.slice(-4,-3)); //[2]
+注意：slice一个参数代表从此位置开始剪切一直到数组的结束。slice二个参数代表从第一个参数的位置开始剪切一直到第二参数的位置。（两个参数剪切时遵循&lt;左闭右开原则&gt;）
+</code></pre><p>6.Array.prototype.splice() 数组拼接（原数组被修改）</p>
+<pre><code>var arr = [1,2,3,4,5];
+console.log(arr.splice(1,2),arr); //[2,3] [1,4,5]
+var arr = [1,2,3,4,5];
+console.log(arr.splice(1,1,&apos;a&apos;,&apos;b&apos;),arr); 
+//[2] [1,&apos;a&apos;,&apos;b&apos;,4,5]
+贴示：splice两个参数的时候第一个表示剪切的位置，第二个表示剪切的个数；splice多个参数的时候表示可以在剪切的位置加入新的元素
+</code></pre><h3 id="ECMAScript5新增的数组方法"><a href="#ECMAScript5新增的数组方法" class="headerlink" title="ECMAScript5新增的数组方法"></a>ECMAScript5新增的数组方法</h3><p>1.Array.prototype.forEach()  遍历数组的元素</p>
+<pre><code>var arr = [1,2,3,4,5];
+err.forEach(function(x,index,a){
+    console.log(x + &apos;|&apos; + index + &apos;|&apos; +(a===err));
+}); //1|0 true 2|1 true 3|2 true 4|3 true 5|4 true
+贴示：函数里的x代表数组的元素 index表示元素的索引 a表示当前数组
+</code></pre><p>2.Array.prototype.map() 数组映射 （原数组未被修改）</p>
+<pre><code>var arr = [1,2,3];
+    console.log(arr.map(function(x){
+return x + 10;
+}));   //[11,12,13]
+console.log(arr);  //[1,2,3]
+贴示：将数组的每个元素传递给指定的函数，并返回给一个数组
+</code></pre><p>3.Array.prototype.filter() 数组过滤 （原数组未被修改）</p>
+<pre><code>var arr = [1,2,3,4,5,6,7,8,9,10];
+console.log(arr.filter(function(x,index){
+    return index % 3 ===0||x &gt; 8;
+}));  //[1,4,7,9,10]
+console.log(arr); //[1,2,3,4...,10]
+贴示：上述函数表示返回对3取余为0的数以及大于8的数的集合
+</code></pre><p>4.Array.prototype.every &amp; some (数组判断)</p>
+<pre><code>var arr = [1,2,3,4,5];
+
+console.log(arr.every(function(x){
+    return x &lt; 10;
+})); //true
+
+console.log(arr.every(function(x){
+    return x &lt; 3;
+})); //false
+
+console.log(arr.some(function(x){
+    return x === 3;
+})); //true
+
+
+console.log(arr.some(function(x){
+    return x === 100;
+})); //false
+贴示：every表示数组里的每个元素都要满足条件才会返回true否则返回false;
+     some表示数组里只要有一个元素满足条件就会返回true否则返回false。
+</code></pre><p>5.Array.prototype.reduce &amp; reduceRight  使用指定的函数将数组进行组合，生成单个值 (原数组未被修改)</p>
+<pre><code> var arr = [1,2,3];
+ var sum = arr.reduce(function(x,y){
+     return x+y;
+ },0)  //数组求和
+ var product = arr.reduce(function(x,y){
+     return x*y;
+ },1); //数组求积
+ console.log(sum，product);  //6  6
+
+//参数0传递给函数的初值。
+arr = [3,9,6];
+var max = arr.reduce(function(x,y){
+    console.log(x + &apos;|&apos; + y );
+    return x &gt; y ? x : y;
+});
+console.log(max); //3|9  9|6
+//arr.reduceRight是从数组的末端开始。
+</code></pre><p>6.Array.prototype.indexOf &amp; lastIndexOf 　数组检索</p>
+<pre><code>var arr = [1,2,3,3,1];
+arr.indexOf(2);         //1
+arr.indexOf(99);        //-1
+arr.indexOf(1,1);       //4
+arr.indexOf(1,-3);      //4
+arr.lastIndexOf(2);     //3
+arr.lastIndexOf(2,-2);  //3
+arr.lastIndexOf(2.-3);  //1
+</code></pre><p>7.Array.isArray 　　　判断是否为数组</p>
+<pre><code>Array.isArray([]);
+[] instanceof Array;//true
+({}).toString.apply([]) === &apos;[object Array]&apos;;
+[].constructor === Array; //true
+贴示：isArray是Array构造器对象上的属性
+</code></pre>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/数组方法/">数组方法</a>
+  </div>
 
 </div>
 
@@ -124,7 +243,7 @@ Quick">
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://crerich.github.io/2016/05/27/hello-world/" data-title="Hello World | Hexo" data-tsina="null" class="share clearfix">
+	  <div data-url="http://crerich.github.io/2015/12/03/数组常用方法/" data-title="数组方法 | Hexo" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -138,18 +257,18 @@ Quick">
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/05/27/pwrd-md/" title="完美世界">
+ <a href="/2015/12/22/正则表达式/" title="正则表达式的模式匹配">
   <strong>上一篇：</strong><br/>
   <span>
-  完美世界</span>
+  正则表达式的模式匹配</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2016/03/23/reset/"  title="reset">
+<a href="/2015/11/26/前端面试题/"  title="前端面试题（一）">
  <strong>下一篇：</strong><br/> 
- <span>reset
+ <span>前端面试题（一）
 </span>
 </a>
 </div>
@@ -164,7 +283,7 @@ Quick">
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#数组常用方法："><span class="toc-number">1.</span> <span class="toc-text">数组常用方法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ECMAScript5新增的数组方法"><span class="toc-number">2.</span> <span class="toc-text">ECMAScript5新增的数组方法</span></a></li></ol>
  
   </div>
 
