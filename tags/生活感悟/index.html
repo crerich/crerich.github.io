@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>NewCode-骅楽</title>
+  <title>生活感悟 | NewCode-骅楽</title>
   <meta name="author" content="程 华">
   
   <meta name="description" content="个人心得分享">
@@ -19,7 +19,7 @@
   
   
   <link href="/favicon.ico" rel="icon" type="image/x-ico">
-  <link rel="canonical" href="http://0.0.0.4000/2016/03/01/meta标签/index.html" />
+  <link rel="canonical" href="http://0.0.0.4000/tags/生活感悟/index.html" />
   <link rel="alternate" href="/atom.xml" title="NewCode-骅楽" type="application/atom+xml">
   
   
@@ -68,121 +68,25 @@
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
     
-      <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
+      <div id="main-col" class="alignleft"><div id="wrapper">
+<h2 class="archive-title tag">生活感悟</h2>
+<p></p>
+
+  <div class="archive">
     
-      <img src="">
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2016-05-31T05:25:47.000Z"><a href="/2016/05/31/五月/">2016-05-31</a></time>
+            
+              <h1 class="title"><a href="/2016/05/31/五月/">五月</a></h1>
+            
+          </header>
+        </div>
+      </article>
     
   </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2016-03-01T11:12:10.000Z"><a href="/2016/03/01/meta标签/">2016-03-01</a></time>
-      
-      
-  
-    <h1 class="title"></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3 id="lt-Meta-gt-元素"><a href="#lt-Meta-gt-元素" class="headerlink" title="&lt; Meta &gt;元素"></a>&lt; Meta &gt;元素</h3><ul>
-<li>初始<strong>Meta</strong></li>
-</ul>
-<blockquote>
-<p>对于meta多数刚接触前端不久的小白估计只知道<code>&lt;meta charset=&quot;utf-8&quot;/&gt;</code>声明文档编码格式用的,下面我们就一起来认识下它的其它的强大的功能。</p>
-</blockquote>
-<ul>
-<li>先来看下<a href="http://www.chekucafe.com/home" target="_blank" rel="external">车库咖啡</a>的源代码的一部分</li>
-</ul>
-<blockquote>
-<p><img src="http://7xr8h6.com1.z0.glb.clouddn.com/meta.png"><br>先尝试着去猜测其中的meta标签的作用</p>
-</blockquote>
-<p>##正题</p>
-<ul>
-<li>What Is <strong>meta</strong>?</li>
-</ul>
-<blockquote>
-<p>meta提供关于HTML文档的元数据。元数据不会显示在页面上,但是对于机器是刻度的。它可用于浏览器,搜索引擎或其他web服务。–<a href="http://www.w3school.com.cn/" target="_blank" rel="external">W3School</a></p>
-<p>meta标签共有两个属性,它们分别是http-equiv属性和name属性,不同的属性对应着多样的参数值,这些不同的参数值就实现了不同的网页功能。<a href="http://baike.baidu.com/" target="_blank" rel="external">百度百科</a></p>
-</blockquote>
-<ul>
-<li>Realize Some Of <strong>Meta</strong></li>
-</ul>
-<blockquote>
-<ul>
-<li>声明编码<br><code>&lt;meta charset=&quot;utf-8&quot;/&gt;</code></li>
-<li>优先使用IE最新版本和Chrome<br><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;/&gt;</code></li>
-<li>浏览器内核控制(控制浏览器选择何种内核渲染)<br><code>&lt;meta name=&quot;renderer&quot; content=&quot;webkit|ie-comp|ie-stand&quot;&gt;</code></li>
-<li>页面关键字<br><code>&lt;meta name=&quot;keywords&quot; content=&quot;your tags&quot;/&gt;</code></li>
-<li>页面描述<br><code>&lt;meta name=&quot;description&quot; content=&quot;120 | 150 words&quot;/&gt;</code></li>
-<li>搜索引擎索引方式<br><code>&lt;meta name=&quot;robots&quot; content=&quot;index,follow...&quot;&gt; content内容可以如下:</code><br>all:文件将被检索,且页面上的链接可以被查询;none:文件将不被检索,且页面上的链接不可以被查询<br>index:文件将被检索;follow:页面上的链接可以被查询;noindex:文件将不被检索;nofollow:页面上的链接不可以被查询</li>
-<li>页面重定向和刷新<br><code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0;url= &quot;/&gt;</code><br>content内的数字代表多长时间后刷新,加url则会重定向到指定网页</li>
-<li>网页作者信息<br><code>&lt;meta name=&quot;author&quot; content=&quot;author name&quot;/&gt;</code></li>
-<li>移动设备<br><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no&quot;/&gt;</code></li>
-<li>WebApp全屏模式:伪装app,离线应用<br><code>&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;/&gt;</code></li>
-<li>隐藏状态栏/设置状态栏颜色:只有在开启WebApp全屏模式时才生效<br><code>&lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black-translucent&quot;/&gt;</code><br>content的值为default | black | black-translucent</li>
-<li>添加到主屏后的标题<br><code>&lt;meta name=&quot;apple-mobile-web-app-title&quot; content=&quot;标题&quot;/&gt;</code></li>
-<li>忽略数字自动识别为电话号码<br><code>&lt;meta content=&quot;telephone=no&quot; name=&quot;format-detection&quot;/&gt;</code></li>
-<li>忽略识别邮箱<br><code>&lt;meta content=&quot;email=no&quot; name=&quot;format-detection&quot;/&gt;</code></li>
-</ul>
-</blockquote>
-<ul>
-<li>Tips For <strong>Meta</strong></li>
-</ul>
-<blockquote>
-<ul>
-<li><code>&lt;meta&gt;</code>标签永远位于head元素内部</li>
-<li>元数据总是以名称/值的形式被成对传递的</li>
-</ul>
-</blockquote>
-<ul>
-<li>Mood Now</li>
-<li><blockquote>
-<p>推荐:<a href="https://segmentfault.com/a/1190000002407912" target="_blank" rel="external">常用meta整理</a><br><a href="https://segmentfault.com/a/1190000000654839" target="_blank" rel="external">移动端meta</a><br><a href="http://www.zhangxinxu.com/wordpress/2015/03/meta-http-equiv-refresh-content/" target="_blank" rel="external">页面定时刷新或跳转</a><br><img src="http://7xr8h6.com1.z0.glb.clouddn.com/stephencurry.png"></p>
-</blockquote>
-</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-<section id="comment">
-<!-- Duoshuo Comment BEGIN -->
-	<div class="ds-thread"></div>
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"winterland"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = 'http://static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		|| document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- Duoshuo Comment END -->
-</section>
 
 </div></div>
       <aside id="sidebar" class="alignright">

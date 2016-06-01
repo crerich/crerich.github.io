@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>NewCode-骅楽</title>
+  <title>五月 | NewCode-骅楽</title>
   <meta name="author" content="程 华">
   
   <meta name="description" content="个人心得分享">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="五月"/>
   <meta property="og:site_name" content="NewCode-骅楽"/>
 
   
@@ -19,7 +19,7 @@
   
   
   <link href="/favicon.ico" rel="icon" type="image/x-ico">
-  <link rel="canonical" href="http://0.0.0.4000/2016/03/01/meta标签/index.html" />
+  <link rel="canonical" href="http://0.0.0.4000/2016/05/31/五月/index.html" />
   <link rel="alternate" href="/atom.xml" title="NewCode-骅楽" type="application/atom+xml">
   
   
@@ -86,73 +86,33 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2016-03-01T11:12:10.000Z"><a href="/2016/03/01/meta标签/">2016-03-01</a></time>
+        <time datetime="2016-05-31T05:25:47.000Z"><a href="/2016/05/31/五月/">2016-05-31</a></time>
       
       
   
-    <h1 class="title"></h1>
+    <h1 class="title">五月</h1>
   
 
     </header>
     <div class="entry">
       
-        <h3 id="lt-Meta-gt-元素"><a href="#lt-Meta-gt-元素" class="headerlink" title="&lt; Meta &gt;元素"></a>&lt; Meta &gt;元素</h3><ul>
-<li>初始<strong>Meta</strong></li>
-</ul>
-<blockquote>
-<p>对于meta多数刚接触前端不久的小白估计只知道<code>&lt;meta charset=&quot;utf-8&quot;/&gt;</code>声明文档编码格式用的,下面我们就一起来认识下它的其它的强大的功能。</p>
+        <h2 id="谁不曾傲娇"><a href="#谁不曾傲娇" class="headerlink" title="谁不曾傲娇"></a>谁不曾傲娇</h2><blockquote>
+<p>五月的最后一天，这天勇士逆转雷霆赢了比赛，这天我坐在完美世界工作虽说还没有具体的任务来做，这天天气晴朗，这天我喝上了咖啡想着未来自己的样子，这天我想了很多……</p>
+<hr>
+
+<p>总想着自己该去写点什么东西来记录下最近关于自己以及周边发生的种种，真的不能再如此的颓废下去了。生活还是应该继续，塑造最完美的自己！</p>
 </blockquote>
-<ul>
-<li>先来看下<a href="http://www.chekucafe.com/home" target="_blank" rel="external">车库咖啡</a>的源代码的一部分</li>
-</ul>
-<blockquote>
-<p><img src="http://7xr8h6.com1.z0.glb.clouddn.com/meta.png"><br>先尝试着去猜测其中的meta标签的作用</p>
-</blockquote>
-<p>##正题</p>
-<ul>
-<li>What Is <strong>meta</strong>?</li>
-</ul>
-<blockquote>
-<p>meta提供关于HTML文档的元数据。元数据不会显示在页面上,但是对于机器是刻度的。它可用于浏览器,搜索引擎或其他web服务。–<a href="http://www.w3school.com.cn/" target="_blank" rel="external">W3School</a></p>
-<p>meta标签共有两个属性,它们分别是http-equiv属性和name属性,不同的属性对应着多样的参数值,这些不同的参数值就实现了不同的网页功能。<a href="http://baike.baidu.com/" target="_blank" rel="external">百度百科</a></p>
-</blockquote>
-<ul>
-<li>Realize Some Of <strong>Meta</strong></li>
-</ul>
-<blockquote>
-<ul>
-<li>声明编码<br><code>&lt;meta charset=&quot;utf-8&quot;/&gt;</code></li>
-<li>优先使用IE最新版本和Chrome<br><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;/&gt;</code></li>
-<li>浏览器内核控制(控制浏览器选择何种内核渲染)<br><code>&lt;meta name=&quot;renderer&quot; content=&quot;webkit|ie-comp|ie-stand&quot;&gt;</code></li>
-<li>页面关键字<br><code>&lt;meta name=&quot;keywords&quot; content=&quot;your tags&quot;/&gt;</code></li>
-<li>页面描述<br><code>&lt;meta name=&quot;description&quot; content=&quot;120 | 150 words&quot;/&gt;</code></li>
-<li>搜索引擎索引方式<br><code>&lt;meta name=&quot;robots&quot; content=&quot;index,follow...&quot;&gt; content内容可以如下:</code><br>all:文件将被检索,且页面上的链接可以被查询;none:文件将不被检索,且页面上的链接不可以被查询<br>index:文件将被检索;follow:页面上的链接可以被查询;noindex:文件将不被检索;nofollow:页面上的链接不可以被查询</li>
-<li>页面重定向和刷新<br><code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0;url= &quot;/&gt;</code><br>content内的数字代表多长时间后刷新,加url则会重定向到指定网页</li>
-<li>网页作者信息<br><code>&lt;meta name=&quot;author&quot; content=&quot;author name&quot;/&gt;</code></li>
-<li>移动设备<br><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no&quot;/&gt;</code></li>
-<li>WebApp全屏模式:伪装app,离线应用<br><code>&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;/&gt;</code></li>
-<li>隐藏状态栏/设置状态栏颜色:只有在开启WebApp全屏模式时才生效<br><code>&lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black-translucent&quot;/&gt;</code><br>content的值为default | black | black-translucent</li>
-<li>添加到主屏后的标题<br><code>&lt;meta name=&quot;apple-mobile-web-app-title&quot; content=&quot;标题&quot;/&gt;</code></li>
-<li>忽略数字自动识别为电话号码<br><code>&lt;meta content=&quot;telephone=no&quot; name=&quot;format-detection&quot;/&gt;</code></li>
-<li>忽略识别邮箱<br><code>&lt;meta content=&quot;email=no&quot; name=&quot;format-detection&quot;/&gt;</code></li>
-</ul>
-</blockquote>
-<ul>
-<li>Tips For <strong>Meta</strong></li>
-</ul>
-<blockquote>
-<ul>
-<li><code>&lt;meta&gt;</code>标签永远位于head元素内部</li>
-<li>元数据总是以名称/值的形式被成对传递的</li>
-</ul>
-</blockquote>
-<ul>
-<li>Mood Now</li>
-<li><blockquote>
-<p>推荐:<a href="https://segmentfault.com/a/1190000002407912" target="_blank" rel="external">常用meta整理</a><br><a href="https://segmentfault.com/a/1190000000654839" target="_blank" rel="external">移动端meta</a><br><a href="http://www.zhangxinxu.com/wordpress/2015/03/meta-http-equiv-refresh-content/" target="_blank" rel="external">页面定时刷新或跳转</a><br><img src="http://7xr8h6.com1.z0.glb.clouddn.com/stephencurry.png"></p>
-</blockquote>
-</li>
-</ul>
+<p>清楚的记得自己是4月26日下午1点半来到完美面试，先是技术老大杨哥面试的我。通过一份试卷边写边聊着与前端相关的技术。然后又和夏总对关于技术和自己的一些方向聊了会儿。最后人力资源陆莉丽跟我谈了关于薪资和其他相关方面的事情。总的来说，总之，那天一切显得都是那么的顺利。<br>然后第二天我又去面试了两家公司－－链家和东方财富网，最终以失败告终。也许是我厌倦了面试，也许完美注定就是我的菜。我就和完美签了合同，并在五月三日正式上班了。</p>
+<p>4月26日，4月27日两天的面试时间。4月27日晚去宝山帮你斟酌了下房子。之后28号去正式把房子租下来了，29号帮你把行李搬过去了，然后决定30号1号去苏州玩。就这样那几天就是这样过来的。</p>
+<p>四月至五月的过度是发生在苏州的。接下来的就是戏剧性的五月了。呵呵！从苏州回来一切似乎都变的陌生了许多。也许是因为我，也许是因为你，大家都有了各自独特的想法。（-_-#）貌似2号那天好像是在寝室玩游戏度过的。从回来之后自己的心情一直是有什么在搅拌着。不想让自己想太多就一直让游戏麻痹自己。</p>
+<p>第二天也就屁颠屁颠地跑去完美上班了。那天6点多就醒了，生怕去的晚了。将近两个小时的车程，本来约定的9点半到，我9点就到了。然后就被安排在会议室里等。直到9点半还有三位小伙伴都到了。我们就开始和人事hronsitesh做些关于入职方面的事情。</p>
+<p>第一天上班发现杨哥陪产去了，无奈我就和另一位新同事每天自己做着自己的事情，学点新东西。就这样，两个星期过去了。这两个星期你还是会依旧的每天问点你所遇到的小问题。我也是尽可能的去给你解答。或许有些问题你是可以自己解决的。但你还是依旧的这样问着，那段时间我也不会主动的去找你聊啊什么的。</p>
+<p>之后你一直问关于我在完美面试的相关问题。虽说我记得，但是我就是不想分享给你，这是男人该有的脾气吧。累了，真的累了。之后一连串的事情或许是我的过错或许都有错总之，傲气成了一种隔阂，成了一种阻碍。说实话不是我不了解你，只是我不想了解你罢了。</p>
+<p>一切置零不失为一种更好的选择。我的沉默你的倔强都是必然的结果。不知道能否再见，只知再见也不会说任何，得到也只会是你那种表情罢了。<br>你有你小女孩的天真，我也有我自己的自尊。话说多了反而不太好，或许这就是最好的结局。</p>
+<p>昨天跟浩哥聊了很多，确实来到上海这几个月自己成长了不少，也成熟了不少。不必惊呼自己的改变，这是必然的。我们所不能接受的，只是突然的觉悟。接下来的几个月，专心于技术，专心于塑造自己，不去想太多，不去做太多，做自己爱做的事情，想自己爱想的事情，回到刚来上海时的那个状态。</p>
+<p>感觉自己有很多话想要去描述，可写着写着发现能写的也就那一丢丢，更多的只能留在回忆里。就让它静静地呆在那儿吧。</p>
+<p>想着是否该给你写封信，一直在纠结，还是再想想吧！</p>
+<p>算了不写了，有空给自己写封信吧。安好！<br>                                    －－程华</p>
 
       
     </div>

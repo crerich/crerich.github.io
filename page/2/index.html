@@ -87,6 +87,81 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2015-12-22T02:47:50.000Z"><a href="/2015/12/22/正则表达式/">2015-12-22</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/12/22/正则表达式/">正则表达式的模式匹配</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="正则表达式的小憩"><a href="#正则表达式的小憩" class="headerlink" title="正则表达式的小憩"></a>正则表达式的小憩</h3><h4 id="重要知识点："><a href="#重要知识点：" class="headerlink" title="重要知识点："></a>重要知识点：</h4><pre><code>分组:     reg1 = /[&apos;&quot;][^&apos;&quot;]*[&apos;&quot;]/;    reg2 = /([&apos;&quot;])[^&apos;&quot;]*\1/;     reg1 = reg2;
+    带圆括号的表达式允许同一正则表达式的后部引用前面的子表达式如reg2的表达式([&apos;&quot;])可以用\1来表示。
+    (因为子表达式可以嵌套另一个子表达式，所以它的位置是参与计数的左括号的位置。例如:/([Jj]ava([Ss]cript)?)\sis\s(fun\w*)/ 此式的\2就是([Ss]cript))
+    若创建一个不带数字编码的引用，也可以对子表达式进行分组。但此时应用&quot;(?:&quot;和&quot;)&quot;。例如:/([Jj]ava(?:[Ss]cript)?)\sis\s(fun\w*)/ 此式的\2就是(fun\w*)。
+
+String支持的4种正则表达式的方法search()、replace()、match()、split()。
+    一.search():返回与之匹配的子串的起始位置。若无，返回-1。若search()的参数不是正则表达式，则通过RegExp构造函数将其转换成正则表达式。
+           search方法不支持全局检索，因为它会忽略正则表达式参数中的修饰符g(即:全局匹配)
+    二.replace():用以执行检索与替换操作。若replace()的第一个参数不是正则表达式，将直接搜索这个字符串。若第一个参数是正则表达式并带有g的话，
+则替换所有与正则表达式匹配的元素。否则只替换第一个。
+    三.match():返回一个由匹配结果组成的数组。 它的唯一参数是一个正则表达式或者通过RegExp()构造函数将其转换成正则表达式。
+    四.split():这个方法用以将调用它的字符串拆分成一个子串组成的数组 它的参数可以是一个正则表达式。
+RegExp对象的属性：source、global、ignoreCase、multiline、lastIndex
+    source:只读的字符串，包含正则表达式的文本。
+    global:只读的布尔值，说明这个正则表达式是否带有修饰符g。
+    ignoreCase:只读的布尔值，说明这个正则表达式是否带有修饰符i。
+    multiline:只读的布尔值，说明这个正则表达式是否带有修饰符m。
+    lastIndex:可读/写的整数。如果匹配模式带有g修饰符，这个属性存储在整个字符串中下一次检索的开始位置。
+RegExp对象的exec()、test()方法。
+    exec():对一个指定的字符串执行正则表达式。
+    test():如果有匹配正则表达式的字符返回true否则返回false。            
+</code></pre>
+      
+    </div>
+    <footer>
+            
+        
+  
+  <div class="tags">
+    <a href="/tags/正则表达式/">正则表达式</a>
+  </div>
+
+        
+          <div style="text-align:center;">
+            <a href="/2015/12/22/正则表达式/#more" class="more-link">阅读全文</a>
+          </div>
+                
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2015-12-03T12:43:36.000Z"><a href="/2015/12/03/数组常用方法/">2015-12-03</a></time>
       
       
@@ -292,6 +367,8 @@ console.log(repeat(&apos;a&apos;,4)); //aaaa
     <li><a href="/tags/数组方法/">数组方法</a><small>1</small></li>
   
     <li><a href="/tags/正则表达式/">正则表达式</a><small>1</small></li>
+  
+    <li><a href="/tags/生活感悟/">生活感悟</a><small>1</small></li>
   
   </ul>
 </div>
